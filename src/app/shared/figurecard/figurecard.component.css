@@ -9,7 +9,14 @@
   text-align: right;
   padding: 15px 20px 13px 20px;
 }
-
+.card-content-flex{
+  display: flex;
+  text-align: right;
+  padding: 15px 20px 13px 20px;
+}
+.task-details {
+  height: auto;
+}
 .card-header {
   float: left;
   text-align: center;
@@ -27,6 +34,14 @@
   width: 56px;
   height: 56px;
   color: #fff;
+}
+.display-left {
+  width: 20%;
+  margin-right: 40%;
+}
+.display-right {
+  width: 20%;
+  margin-left: 40%
 }
 
 .category{

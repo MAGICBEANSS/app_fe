@@ -6,7 +6,12 @@
   width: 100%;
   flex: 1;
 }
-
+.fullheight {
+  height: 100%; 
+}
+.sidenav-width {
+  width: 250px;
+}
 .sidebar-panel{
   width: 260px;
   position: fixed;
@@ -19,7 +24,12 @@
   -o-transition: all 500ms;
   transition: all 500ms;
 }
-
+.height90 {
+  height: 90%;
+}
+.height100 {
+  height: 100%;
+}
 .main-panel{
   width: 100%;
   flex: 1;

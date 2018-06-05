@@ -11,7 +11,7 @@ import { SettingsComponent } from './dashboard/settings/settings.component';
 import { PriceTableComponent } from './dashboard/component/pricetable/pricetable.component';
 import { PanelsComponent} from './dashboard/component/panels/panels.component';
 import { WizardComponent } from './dashboard/component/wizard/wizard.component';
-
+import { LoaderComponent } from './loader/loader.component';
 import { RootComponent } from './dashboard/root/root.component';
 import { LoginComponent } from './page/login/login.component';
 import { LockComponent } from './page/lock/lock.component';
@@ -21,7 +21,9 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'lock', component: LockComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'dashboard', component: RootComponent, children: [
+  {path: 'loader', component: LoaderComponent},
+
+  {path: 'dashboard', children: [
     {path: '', component: HomeComponent},
     {path: 'profile', component: ProfileComponent},
     {path: 'table', component: TableComponent},

@@ -1,0 +1,44 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+  mat-row:nth-child(even){
+    background-color:#fff;
+    }
+
+mat-row:nth-child(odd){
+    background-color: #ddd;
+    }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .mat-column-received {
+    margin-left: 20px;
+    flex: 0 0 100px;
+  }
+
+  .mat-column-sender {
+    flex: 0 0 100px;
+  }
+  .mat-column-duedate {
+
+    flex: 1 0 20px;
+  }
+  .mat-column-assigned_to {
+    flex: 0 0 100px;
+  }
+  .mat-column-name{
+
+    flex: 1 0 200px;
+  }

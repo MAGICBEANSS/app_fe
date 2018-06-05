@@ -1,12 +1,23 @@
-<div class="figure-card card">
+<div class="figure-card card" (click)="showhidedetails($event)">
   <div class="card-header" [ngStyle]="{ 'background': linearColor, 'box-shadow': boxShadow }">
     <i class="material-icons">{{ headerIcon }}</i>
+    
   </div>
-  <div class="card-content">
-    <p class="category">{{ category }}</p>
-    <h3 class="title">{{ title }}</h3>
+
+  <div class="card-content-flex">
+    <div class=display-left>
+        <span class="category">{{ category }}</span>
+    </div>
+   
+    <div class=display-right>
+        <span class="title">{{ title }}</span>
+    </div>
+   
   </div>
   <div class="card-footer">
       <i class="material-icons text-danger">{{ footerIcon }}</i> {{ footContent }}
   </div>
 </div>
+<div class="figure-card card task-details " *ngIf="displaydetails" >
+    <app-display-table [data]="data"></app-display-table>
+  </div>
