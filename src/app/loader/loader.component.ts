@@ -21,7 +21,7 @@ sub;
                en8cg%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=Asia%2FCalcutta`;
          }
          else if(data['frameurl']!==null){
-          console.log('data  frame url');
+          console.log('data frame url');
           console.log(data['frameurl']);
           this.srcurl = data['frameurl'];
           
