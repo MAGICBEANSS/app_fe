@@ -9,7 +9,7 @@
   </div>
 </div>
  -->
- <div class="example-container  fullheight" [class.example-is-mobile]="mobileQuery.matches" >
+<!--  <div class="example-container  fullheight" [class.example-is-mobile]="mobileQuery.matches" >
     <mat-toolbar color="primary" class="example-toolbar"  *ngIf="loggedIn">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon >menu</mat-icon></button>
       <h1 class="example-app-name">Dashboard </h1>
@@ -21,7 +21,7 @@
               [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
                 <mat-nav-list>
                     <a mat-list-item routerLink="."  (click)="snav.toggle();routeto()">Index 1</a>
-          <a mat-list-item routerLink="." (click)="snav.toggle();routesto()"   *ngFor="let menuitem of menuList">{{menuitem.name}} </a>
+          <a mat-list-item routerLink="." (click)="snav.toggle();routesto(menuitem)"   *ngFor="let menuitem of menuList">{{menuitem.name}} </a>
           <a mat-list-item routerLink="." (click)="snav.toggle();routesdiff()">Calendar</a>
           <a mat-list-item routerLink="." (click)="snav.toggle();logout()"   >Logout</a>
         
@@ -34,4 +34,4 @@
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
-  
+   -->

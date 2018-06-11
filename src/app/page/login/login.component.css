@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 90px;
+  margin-top: 70px;
   top: -90px;
   -webkit-animation-name: card;
   -moz-animation-name: card;
@@ -41,7 +41,7 @@
   overflow: hidden;
   top: -40px;
   width: 100%;
-  padding: 25px;
+  padding: 5px;
   border-radius: 3px;
   background: linear-gradient(60deg, #ec407a, #d81b60);
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
@@ -72,6 +72,7 @@
 
 .form-row, .card-form, .mat-input-container{
   width: 100%;
+  overflow: hidden;
 }
 
 .card-form{

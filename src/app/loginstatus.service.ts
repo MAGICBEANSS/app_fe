@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoginstatusService {
 isLoggedIn = false;
-
+ 
 public loggedIn: Subject<boolean> = new BehaviorSubject<boolean>(false);
   constructor() {
     if (localStorage.getItem('loginkey') !== null ) {
@@ -15,14 +15,16 @@ public loggedIn: Subject<boolean> = new BehaviorSubject<boolean>(false);
 
     setLoggedIn(status) {
       if (status) {
+        this.loggedIn.next(status);
       localStorage.setItem('loginkey', 'someloginkey');
       } else {
-        localStorage.removeItem('loginkey');
+        this.loggedIn.next(status);
+   //     localStorage.removeItem('loginkey');
       }
-      this.loggedIn.next(status);
+      
     }
-
 }
+
 
 /*
 _________________

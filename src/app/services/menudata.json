@@ -1,0 +1,35 @@
+[
+    { "role":"admin",
+   "data": [{
+        "name":"Wikipedia",
+        "url":"https://www.wikipedia.org"
+    },
+    {
+        "name":"Yahoo",
+        "url":"https://www.wikipedia.org"
+    },
+    {
+        "name":"ICC",
+        "url":"https://www.icc-cricket.com"
+    }
+]
+}
+,
+{ "role":"guest",
+   "data": [{
+        "name":"All U Read",
+        "url":"http://www.allyoucanread.com/"
+    },
+    {
+        "name":"YCombinator",
+        "url":"https://news.ycombinator.com"
+    },
+    {
+        "name":"Weavesilk",
+        "url":"http://weavesilk.com/"
+    }
+]
+}
+    
+
+]

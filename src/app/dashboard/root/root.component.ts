@@ -84,9 +84,11 @@ this.boxheight = 'height90';
   //  this.sideNav.close();
     this._route.navigate(['loader'], {queryParams : {from: 'notother'}});
   }
-  routesto() {
+  routesto(menudata: any) {
+    console.log('ddddd');
+    console.log(menudata);
   //  this.sideNav.close();
-    this._route.navigate(['dashboard/profile']);
+    this._route.navigate(['loader'], {queryParams : {frameurl: menudata.url}});
   }
   routesdiff() {
     this._route.navigate(['loader'], {queryParams : {from: 'other'}});

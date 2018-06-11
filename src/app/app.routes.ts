@@ -16,6 +16,7 @@ import { RootComponent } from './dashboard/root/root.component';
 import { LoginComponent } from './page/login/login.component';
 import { LockComponent } from './page/lock/lock.component';
 import { RegisterComponent } from './page/register/register.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -23,8 +24,9 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'loader', component: LoaderComponent},
 
-  {path: 'dashboard', children: [
+  {path: 'dashboard' ,  children: [
     {path: '', component: HomeComponent},
+    {path: 'loader', component: LoaderComponent},
     {path: 'profile', component: ProfileComponent},
     {path: 'table', component: TableComponent},
     {path: 'notification', component: NotificationComponent},
