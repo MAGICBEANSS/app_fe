@@ -19,7 +19,7 @@ public loggedIn: Subject<boolean> = new BehaviorSubject<boolean>(false);
       localStorage.setItem('loginkey', 'someloginkey');
       } else {
         this.loggedIn.next(status);
-   //     localStorage.removeItem('loginkey');
+        localStorage.removeItem('loginkey');
       }
       
     }

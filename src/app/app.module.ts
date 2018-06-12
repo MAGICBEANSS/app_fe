@@ -43,6 +43,9 @@ import { LoaderComponent } from './loader/loader.component';
 import { SafepipePipe } from './safepipe.pipe';
 import {NewsletterService} from './messaging.service';
 import { LoginstatusService } from './loginstatus.service';
+import { AuthService } from './services/auth-service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { LoginGuardService } from './services/login-guard.service';
 // import { MaterialModule } from './material.module';
 
 @NgModule({
@@ -89,7 +92,7 @@ import { LoginstatusService } from './loginstatus.service';
       enabled: environment.production
     })
   ],
-  providers: [SettingsService , TaskResolver , NewsletterService , LoginstatusService],
+  providers: [AuthService, AuthGuardService, LoginGuardService, SettingsService , TaskResolver , NewsletterService , LoginstatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

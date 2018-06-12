@@ -145,7 +145,10 @@ ngOnDestroy() {
   }
   routeto() {
   //  this.sideNav.close();
-    this._rr.navigate(['dashboard/loader'], {queryParams : {from: 'notother'}});
+    this._rr.navigate(['loader'], {queryParams : {from: 'notother'}});
+  }
+  gotoDasboard() {
+    this._rr.navigate(['dashboard/']);
   }
   routesto(menudata: any) {
     console.log('ddddd');
@@ -158,6 +161,7 @@ ngOnDestroy() {
   }
   logout() {
     this._lls.setLoggedIn(false);
+    this._rr.navigate(['']);
   }
 
 

@@ -17,17 +17,19 @@ import { LoginComponent } from './page/login/login.component';
 import { LockComponent } from './page/lock/lock.component';
 import { RegisterComponent } from './page/register/register.component';
 import { AppComponent } from './app.component';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
+import { LoginGuardService } from './services/login-guard.service';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: LoginComponent , canActivate: [LoginGuardService]},
   {path: 'lock', component: LockComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'loader', component: LoaderComponent},
 
   {path: 'dashboard' ,  children: [
-    {path: '', component: HomeComponent},
-    {path: 'loader', component: LoaderComponent},
-    {path: 'profile', component: ProfileComponent},
+    {path: '', component: HomeComponent , canActivate: [AuthGuard]},
+    {path: 'loader', component: LoaderComponent , canActivate: [AuthGuard]},
+    {path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]} ,
     {path: 'table', component: TableComponent},
     {path: 'notification', component: NotificationComponent},
     {path: 'alert', component: SweetAlertComponent},

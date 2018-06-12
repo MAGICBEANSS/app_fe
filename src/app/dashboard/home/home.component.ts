@@ -43,7 +43,7 @@ this.isConnected$.subscribe((value) => {
   if(value == false)
       {
         swal({
-          title: 'You are offline',
+          title: 'You are Offline!!',
           text: 'We still keep you going..',
           confirmButtonClass: 'btn btn-warning'
         });
