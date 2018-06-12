@@ -77,7 +77,7 @@ this._lls.loggedIn.subscribe((res) => {
   }
 
  ngOnInit() {
-    localStorage.removeItem('loginkey');
+   // localStorage.removeItem('loginkey');
   this.subscribeToNotifications();
 
   // root-component-copied

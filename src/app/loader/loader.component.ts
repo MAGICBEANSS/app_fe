@@ -20,15 +20,15 @@ sub;
                bgcolor=%23FFFFFF&amp;src=b7ql6t9m4j1j06s645vi7
                en8cg%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=Asia%2FCalcutta`;
          }
+         
+         else if(data['from']=== 'notother') {
+           this.srcurl = './assets/index1.html';
+         }
          else if(data['frameurl']!==null){
           console.log('data frame url');
           console.log(data['frameurl']);
           this.srcurl = data['frameurl'];
-          
         }
-         else {
-           this.srcurl = './assets/index1.html';
-         }
       }
     });
    }

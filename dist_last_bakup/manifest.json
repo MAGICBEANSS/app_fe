@@ -1,0 +1,9 @@
+{
+    "short_name": "App",
+    "name": "PWA App",
+    "start_url": "/pp/",
+    "display": "standalone",
+    "gcm_sender_id": "103953800507",
+    "scope":"/pp",
+    "theme_color": "#ccc"
+  }
