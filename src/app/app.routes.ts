@@ -16,19 +16,23 @@ import { RootComponent } from './dashboard/root/root.component';
 import { LoginComponent } from './page/login/login.component';
 import { LockComponent } from './page/lock/lock.component';
 import { RegisterComponent } from './page/register/register.component';
-import { AppComponent } from './app.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { LoginGuardService } from './services/login-guard.service';
+import { GridlistComponent} from './gridlist/gridlist.component';
+import { TablelistComponent } from './tablelist/tablelist.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent , canActivate: [LoginGuardService]},
   {path: 'lock', component: LockComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'loader', component: LoaderComponent},
-
+  {path: 'loader', component: LoaderComponent , canActivate: [AuthGuard]},
+  { path: 'grid' , component : GridlistComponent ,  canActivate: [AuthGuard]},
+  { path: 'table' , component : TablelistComponent ,  canActivate: [AuthGuard]},
+  {path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]} ,
   {path: 'dashboard' ,  children: [
     {path: '', component: HomeComponent , canActivate: [AuthGuard]},
-    {path: 'loader', component: LoaderComponent , canActivate: [AuthGuard]},
+  //  {path: 'loader', component: LoaderComponent , canActivate: [AuthGuard]},
     {path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]} ,
     {path: 'table', component: TableComponent},
     {path: 'notification', component: NotificationComponent},
@@ -37,7 +41,9 @@ const routes: Routes = [
     {path: 'components/price-table', component: PriceTableComponent},
     {path: 'components/panels', component: PanelsComponent},
     {path: 'components/wizard', component: WizardComponent}
-  ]}
+   
+  ]},
+  {path: '**', component : PageNotFoundComponent , canActivate: [AuthGuard]}
 ];
 
 export const routing = RouterModule.forRoot(routes);

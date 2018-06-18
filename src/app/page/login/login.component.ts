@@ -11,6 +11,8 @@ import { TaskResolver } from '../../services/taskresolver.service';
 export class LoginComponent implements OnInit {
   isLoggedIn = false;
   appName: String;
+  email = 'peter@klaven';
+  password = 'cityslicka';
   constructor(private _router: Router, private http: Http,
     private _loginstatusservice: LoginstatusService,
     private _trs: TaskResolver
@@ -25,7 +27,24 @@ export class LoginComponent implements OnInit {
   }
 
   loginBtn() {
-    this._loginstatusservice.setLoggedIn(true);
+    const logindata = {'email':this.email,'password':this.password};
+    const loginapiservice = 'https://reqres.in/api/login' ;
+    this.http.post(loginapiservice,logindata).subscribe(
+      (res) => {
+        console.log('loginresponse');
+        console.log(res);
+        
+        console.log(res.json());
+        const resdata= res.json();
+        if(resdata['token'] !== '')
+        {
+          this._loginstatusservice.setLoggedIn(true,resdata['token']);
+          this._router.navigate(['dashboard']);
+        }
+        
+      }
+    );
+
     this._router.navigate(['dashboard']);
     const body = new FormData();
 body.append('user_token', 'anyusertoken');

@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routes';
-import { MatButtonModule, MatListModule, MatSidenav , MatSidenavContent ,
+import { MatButtonModule, MatListModule, MatSidenav , MatSidenavContent , MatGridListModule , 
   MatToolbarModule , MatRadioModule, MatInputModule, MatMenuModule, MatCheckboxModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -46,7 +46,11 @@ import { LoginstatusService } from './loginstatus.service';
 import { AuthService } from './services/auth-service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { LoginGuardService } from './services/login-guard.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GridlistComponent } from './gridlist/gridlist.component';
+import { TablelistComponent } from './tablelist/tablelist.component';
 // import { MaterialModule } from './material.module';
+
 
 @NgModule({
   declarations: [
@@ -73,9 +77,12 @@ import { LoginGuardService } from './services/login-guard.service';
     WizardComponent,
     DisplayTableComponent,
     LoaderComponent,
-    SafepipePipe
+    SafepipePipe,
+    PageNotFoundComponent,
+    GridlistComponent,
+    TablelistComponent
   ],
-  imports: [HttpClientModule,
+  imports: [HttpClientModule, MatGridListModule,
     DataTablesModule,
     BrowserModule,
     FormsModule,

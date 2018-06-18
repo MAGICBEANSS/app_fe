@@ -5,7 +5,7 @@
   <div class="right">
     <a routerLink="/dashboard" routerLinkActive="router-active" *ngIf="isLoggedIn"><i class="material-icons">dashboard</i><p>DASHBOARD</p></a>
     <a *ngIf="isLoggedIn" routerLink="" routerLinkActive="router-active" [routerLinkActiveOptions]="{exact: true}"><i class="material-icons">fingerprint</i><p>LOGIN</p></a>
-    <a routerLink="/register" routerLinkActive="router-active"><i class="material-icons">person_add</i><p>REGISTER</p></a>
+    <a  (click)="register(text)" routerLinkActive="router-active"><i class="material-icons">person_add</i><p>{{text}}</p></a>
     <a *ngIf="isLoggedIn" routerLink="/lock" style="margin-right: 0" routerLinkActive="router-active"><i class="material-icons">lock_open</i><p>LOCK</p></a>
   </div>
 </header>

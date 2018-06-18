@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LoginstatusService } from '../../loginstatus.service';
 import { TaskResolver } from '../../services/taskresolver.service';
+import { Router , ActivatedRoute , NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,9 +10,24 @@ import { TaskResolver } from '../../services/taskresolver.service';
 export class HeaderComponent implements OnInit {
 isLoggedIn: boolean;
 appName: String;
+@Input() caller;
+text = "Register";
+  constructor(private _lls: LoginstatusService,private _trs: TaskResolver ,private _rr: Router,  private _ar: ActivatedRoute) { 
+    if(this.caller === 'register')
+    {
+      this.text = 'Login'
+    }
+    this._rr.events.subscribe(
+      (res) => {
+        if (res instanceof NavigationEnd) {
+          const data = this._ar.snapshot.queryParams;
+  
+          if (data['user'] === 'new') {
+              this.text =' Login'
+          }
 
-
-  constructor(private _lls: LoginstatusService,private _trs: TaskResolver) { 
+      }
+      });
     
     this._trs.getAppDetails().subscribe((data) => {
       data = data.json();
@@ -20,6 +36,14 @@ appName: String;
         this.appName = data['name'];
    //     this.appName = res['']
     });
+
+  }
+
+  register(text) {
+    if(text === 'Register')
+    this._rr.navigate(['register'],{queryParams : {user:'new'}});
+    else
+    this._rr.navigate(['']);
 
   }
 

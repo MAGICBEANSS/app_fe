@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
   sub: PushSubscription;
   mobileQuery: MediaQueryList;
   menuList: Array<any>;
+  localmenu: Array<any>;
   @ViewChild('side') public sideNav: MatSidenav;
   private _mobileQueryListener: () => void;
   public id: number;
@@ -71,7 +72,10 @@ this._lls.loggedIn.subscribe((res) => {
   //  localStorage.removeItem('loginkey');
  //     this._rr.navigate(['dashboard']);
  if(localStorage.getItem('loginkey')!=null)
- this._lls.setLoggedIn(true);
+ {
+ const loginkeyvalue = localStorage.getItem('loginkey');  
+ this._lls.setLoggedIn(true,loginkeyvalue);
+ }
  else
  this._lls.setLoggedIn(false);
   }
@@ -95,6 +99,17 @@ this._lls.loggedIn.subscribe((res) => {
       this.menuList = data[0].data;
       console.log('menuitems ');
       console.log(this.menuList);
+  //    this.pendingtask = data;
+    //   this.countpendingtasks = this.pendingtask.length;
+    }
+  );
+  this._trs.getInnerMenu().subscribe(
+    (data) => {
+      data = data.json();
+      console.log(data);
+      this.localmenu = data;
+      console.log('localmenu ');
+      console.log(this.localmenu);
   //    this.pendingtask = data;
     //   this.countpendingtasks = this.pendingtask.length;
     }
@@ -147,18 +162,33 @@ ngOnDestroy() {
   //  this.sideNav.close();
     this._rr.navigate(['loader'], {queryParams : {from: 'notother'}});
   }
-  gotoDasboard() {
+  gotoDasboard(path) {
+    if(path=='dashboard')
     this._rr.navigate(['dashboard/']);
+    else if(path == 'grid')
+    this._rr.navigate(['grid/']);
+    else if(path == 'table')
+    this._rr.navigate(['table']);
   }
-  routesto(menudata: any) {
+  routesto(menudata: any,type) {
+    if(type == 'external')
+{
     console.log('ddddd');
     console.log(menudata);
   //  this.sideNav.close();
     this._rr.navigate(['loader'], {queryParams : {frameurl: menudata.url}});
+}
+if(type == 'internal')
+{
+    console.log('ddddd');
+    console.log(menudata);
+  //  this.sideNav.close();
+    this._rr.navigate([menudata['url']]);
+}
   }
-  routesdiff() {
+ /*  routesdiff() {
     this._rr.navigate(['loader'], {queryParams : {from: 'other'}});
-  }
+  } */
   logout() {
     this._lls.setLoggedIn(false);
     this._rr.navigate(['']);

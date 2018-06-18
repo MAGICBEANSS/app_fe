@@ -15,6 +15,13 @@ sub;
     (res) => {
       if (res instanceof NavigationEnd) {
         const data = this._ar.snapshot.queryParams;
+        console.log("sdkfljdsklfsdjfksdfjsdklgfjd");
+        console.log(data);
+        if(Object.keys(data).length === 0)
+        {
+            this._rr.navigate(['pagenotfound']);
+        }
+      
         if (data['from'] === 'other') {
                this.srcurl = `https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;
                bgcolor=%23FFFFFF&amp;src=b7ql6t9m4j1j06s645vi7

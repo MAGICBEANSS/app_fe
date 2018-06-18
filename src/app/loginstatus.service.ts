@@ -13,10 +13,10 @@ public loggedIn: Subject<boolean> = new BehaviorSubject<boolean>(false);
     }
    }
 
-    setLoggedIn(status) {
+    setLoggedIn(status,lokinkeyvalue?) {
       if (status) {
         this.loggedIn.next(status);
-      localStorage.setItem('loginkey', 'someloginkey');
+      localStorage.setItem('loginkey',lokinkeyvalue );
       } else {
         this.loggedIn.next(status);
         localStorage.removeItem('loginkey');
