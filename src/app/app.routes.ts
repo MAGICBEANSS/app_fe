@@ -46,5 +46,5 @@ const routes: Routes = [
   {path: '**', component : PageNotFoundComponent , canActivate: [AuthGuard]}
 ];
 
-export const routing = RouterModule.forRoot(routes);
+export const routing = RouterModule.forRoot(routes, { useHash: true });
 

@@ -10,3 +10,91 @@ dbus[21916]: arguments to dbus_message_iter_append_basic() were incorrect, asser
 This is normally a bug in some application using the D-Bus library.
 
   D-Bus not built with -rdynamic so unable to print a backtrace
+Reading locale option from /home/mb/.config/filezilla/filezilla.xml
+wxD-Bus: Signal from /org/freedesktop/DBus, member NameAcquired
+wxD-Bus: Reply with serial 2
+wxD-Bus: Reply to RegisterClient, our object path is /org/gnome/SessionManager/Client32
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 3
+wxD-Bus: Reply: Error: The name org.freedesktop.PowerManagement was not provided by any .service files
+wxD-Bus: Falling back to org.gnome.SessionManager
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 4
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 1633210455
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 5
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 6
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 170672409
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 7
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: Reply with serial 8
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 9
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 294356595
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 10
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: Reply with serial 11
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 12
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 1549144603
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 13
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: Reply with serial 14
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 15
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 1951035444
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 16
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: Reply with serial 17
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 18
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 11874580
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 19
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: Reply with serial 20
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 21
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 963250911
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 22
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: Reply with serial 23
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 24
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 477819320
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 25
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 26
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 416655535
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 27
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 28
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 973990000
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 29
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: Reply with serial 30
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 31
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 599914539
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 32
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 33
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 1050716448
+wxDdbus[18715]: arguments to dbus_message_iter_append_basic() were incorrect, assertion "*bool_p == 0 || *bool_p == 1" failed in file ../../../dbus/dbus-message.c line 2777.
+This is normally a bug in some application using the D-Bus library.
+
+  D-Bus not built with -rdynamic so unable to print a backtrace

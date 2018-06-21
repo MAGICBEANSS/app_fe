@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routes';
+import 'hammerjs';
+import 'hammer-timejs';
 import { MatButtonModule, MatListModule, MatSidenav , MatSidenavContent , MatGridListModule , 
   MatToolbarModule , MatRadioModule, MatInputModule, MatMenuModule, MatCheckboxModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
