@@ -51,6 +51,8 @@ import { LoginGuardService } from './services/login-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { GridlistComponent } from './gridlist/gridlist.component';
 import { TablelistComponent } from './tablelist/tablelist.component';
+import { SinglecolumntableComponent } from './singlecolumntable/singlecolumntable.component';
+import { OnlineAvailableService } from './services/online-available.service';
 // import { MaterialModule } from './material.module';
 
 
@@ -82,7 +84,8 @@ import { TablelistComponent } from './tablelist/tablelist.component';
     SafepipePipe,
     PageNotFoundComponent,
     GridlistComponent,
-    TablelistComponent
+    TablelistComponent,
+    SinglecolumntableComponent
   ],
   imports: [HttpClientModule, MatGridListModule,
     DataTablesModule,
@@ -101,7 +104,7 @@ import { TablelistComponent } from './tablelist/tablelist.component';
       enabled: environment.production
     })
   ],
-  providers: [AuthService, AuthGuardService, LoginGuardService, SettingsService , TaskResolver , NewsletterService , LoginstatusService],
+  providers: [AuthService, AuthGuardService, LoginGuardService, SettingsService , TaskResolver , NewsletterService , LoginstatusService, OnlineAvailableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

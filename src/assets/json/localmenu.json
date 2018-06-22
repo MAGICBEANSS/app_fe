@@ -18,5 +18,9 @@
         "name":"Grid",
         "url":"grid"
 
+    },
+    {
+        "name":"Single Col",
+        "url":"singletable"
     }
 ]

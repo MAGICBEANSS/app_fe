@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import { SwUpdate} from '@angular/service-worker';
 
 import {Observable} from 'rxjs/Observable';
-
+import {OnlineAvailableService} from './services/online-available.service';
 import {SwPush} from '@angular/service-worker';
 import {NewsletterService} from './messaging.service';
 import { LoginstatusService } from './loginstatus.service';
@@ -34,10 +34,13 @@ export class AppComponent implements OnInit {
   public loggedIn = false;
   public backgroundColor: string;
   public boxheight;
+  private isOnline = true;
 
   readonly VAPID_PUBLIC_KEY = 'BKYEevgdyG0q71I4a45jYYrSnkLX_p-NSQuGLnmiDDhGz8jGTXyILmbBcpqR0USDnskuJN_kikqTgLxQGC94Mfs';
 
-  constructor(private _rr: Router,
+  constructor(
+    private _ols: OnlineAvailableService,
+    private _rr: Router,
     private _lls: LoginstatusService,
     private swPush: SwPush,
     private newsletterService: NewsletterService,
@@ -50,7 +53,18 @@ export class AppComponent implements OnInit {
   //  private _route: Router
   ) {
 
+
 // root.component.copied
+this._ols.isConnected$.subscribe((value) => {
+  if(value == false)
+      {
+       this.isOnline = false;
+      }
+      else
+      {
+        this.isOnline = true;
+      }
+});
 
 this._lls.loggedIn.subscribe((res) => {
     console.log('res -< ');

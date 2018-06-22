@@ -37,6 +37,12 @@ return this.http.get('../../assets/json/pending_task.json');
     //  return this.http.get('https://jsonplaceholder.typicode.com/users');
     }
 
+    getsingleTableList(): Observable<any> {
+        // return this.http.get('../../assets/json/tablelist.json');
+        return this.http.get('assets/json/singlecol.json');
+      //  return this.http.get('https://jsonplaceholder.typicode.com/users');
+      }
+  
    getAppDetails(): Observable<any> {
                 return this.http.get('manifest.json');
              //   return this.http.get('https://www.antrorse.org/pp/manifest.json');

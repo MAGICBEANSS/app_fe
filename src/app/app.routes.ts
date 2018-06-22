@@ -21,6 +21,7 @@ import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { LoginGuardService } from './services/login-guard.service';
 import { GridlistComponent} from './gridlist/gridlist.component';
 import { TablelistComponent } from './tablelist/tablelist.component';
+import { SinglecolumntableComponent} from './singlecolumntable/singlecolumntable.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent , canActivate: [LoginGuardService]},
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'grid' , component : GridlistComponent ,  canActivate: [AuthGuard]},
   { path: 'table' , component : TablelistComponent ,  canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]} ,
+  {path: 'singletable', component: SinglecolumntableComponent,  canActivate: [AuthGuard]} ,
   {path: 'dashboard' ,  children: [
     {path: '', component: HomeComponent , canActivate: [AuthGuard]},
   //  {path: 'loader', component: LoaderComponent , canActivate: [AuthGuard]},
