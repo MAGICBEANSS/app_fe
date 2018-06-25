@@ -15,6 +15,9 @@ import { MatSidenav } from '@angular/material';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef } from '@angular/core';
 import { TaskResolver } from './services/taskresolver.service';
+import {AppDataService} from './app-data.service';
+import { AuthService } from "angular2-social-login";
+
 
 
 @Component({
@@ -23,6 +26,7 @@ import { TaskResolver } from './services/taskresolver.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  header = "Dashboard"
   title = 'app works!';
   sub: PushSubscription;
   mobileQuery: MediaQueryList;
@@ -34,11 +38,13 @@ export class AppComponent implements OnInit {
   public loggedIn = false;
   public backgroundColor: string;
   public boxheight;
-  private isOnline = true;
+  public isOnline = true;
 
   readonly VAPID_PUBLIC_KEY = 'BKYEevgdyG0q71I4a45jYYrSnkLX_p-NSQuGLnmiDDhGz8jGTXyILmbBcpqR0USDnskuJN_kikqTgLxQGC94Mfs';
 
   constructor(
+    private _ats: AuthService,
+    private _apd: AppDataService,
     private _ols: OnlineAvailableService,
     private _rr: Router,
     private _lls: LoginstatusService,
@@ -49,11 +55,10 @@ export class AppComponent implements OnInit {
     changeDetectorRef: ChangeDetectorRef, 
     private media: MediaMatcher,
     public settingService: SettingsService ,
- //   private _loginstatusservice: LoginstatusService,
-  //  private _route: Router
   ) {
 
-
+console.log('kdfjdsklf');
+console.log(this._apd.user);
 // root.component.copied
 this._ols.isConnected$.subscribe((value) => {
   if(value == false)
@@ -65,6 +70,26 @@ this._ols.isConnected$.subscribe((value) => {
         this.isOnline = true;
       }
 });
+this.header = localStorage.getItem('myappfname');
+this._apd.userdata.subscribe((data) => {
+  console.log('userdata');
+  console.log(data);
+ this._lls.loggedIn.subscribe((status ) => {
+   if(status)
+   {
+     this._apd.userdata.subscribe((adata) => {
+       console.log(adata);
+   //    this.header = adata.firstName;
+       this.header = localStorage.getItem('myappfname');
+ //      this._apd.user = adata;
+
+     });
+   }
+ });
+  
+  
+    });
+  
 
 this._lls.loggedIn.subscribe((res) => {
     console.log('res -< ');
@@ -82,7 +107,7 @@ this._lls.loggedIn.subscribe((res) => {
         this._mobileQueryListener = () => changeDetectorRef.detectChanges();
         this.mobileQuery.addListener(this._mobileQueryListener);
 
-// root.component copied ends
+// root.component copied eends
   //  localStorage.removeItem('loginkey');
  //     this._rr.navigate(['dashboard']);
  if(localStorage.getItem('loginkey')!=null)
@@ -204,6 +229,17 @@ if(type == 'internal')
     this._rr.navigate(['loader'], {queryParams : {from: 'other'}});
   } */
   logout() {
+
+    localStorage.removeItem('myappfname');
+    this._ats.logout().subscribe(
+      (data)=>{
+        console.log(data);
+        this._apd.user=null;
+        console.log('logout');
+      }
+    ) 
+   
+   // this._ats.signOut();
     this._lls.setLoggedIn(false);
     this._rr.navigate(['']);
   }

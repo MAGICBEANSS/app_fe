@@ -1,10 +1,84 @@
 [
-    {"text": "One", "cols": 1, "rows": 1, "color": "lightblue"},
-    {"text": "Two", "cols": 1, "rows": 1, "color": "lightgreen"},
-    {"text": "Three", "cols": 1, "rows": 1, "color": "lightpink"},
-    {"text": "Four", "cols": 1, "rows": 1, "color": "#DDBDF1"},
-       {"text": "One", "cols": 1, "rows": 1, "color": "lightblue"},
-    {"text": "Two", "cols": 1, "rows": 1, "color": "lightgreen"},
-    {"text": "Three", "cols": 1, "rows": 1, "color": "lightpink"},
-    {"text": "Four", "cols": 1, "rows": 1, "color": "#DDBDF1"}
-  ]
+    {
+      "text": "Google",
+      "cols": 1,
+      "rows": 1,
+      "color": "lightblue" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"external",
+      "link":"www.google.co.in"
+
+    },
+    {
+      "text": "Yahoo",
+      "cols": 1,
+      "rows": 1,
+      "color": "orange" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"external",
+      "link":"www.in.yahoo.com"
+    },
+    {
+      "text": "Gmail",
+      "cols": 1,
+      "rows": 1,
+      "color": "green" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"external",
+      "link":"mail.google.com"
+    },
+    {
+      "text": "Youtube",
+      "cols": 1,
+      "rows": 1,
+      "color": "teal" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"external",
+      "link":"www.youtube.com"
+    },
+    {
+      "text": "Profile",
+      "cols": 1,
+      "rows": 1,
+      "color": "black" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"internal",
+      "link":"profile"
+    },
+    {
+      "text": "PC",
+      "cols": 1,
+      "rows": 1,
+      "color": "#aaa" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"internal",
+      "link":"dashboard"
+    },
+    {
+      "text": "Shopping",
+      "cols": 1,
+      "rows": 1,
+      "color": "lightblue" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"internal",
+      "link":"dashboard"
+    },
+    {
+      "text": "Music",
+      "cols": 1,
+      "rows": 1,
+      "color": "green" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"internal",
+      "link":"dashboard"
+    },
+    {
+      "text": "One",
+      "cols": 1,
+      "rows": 1,
+      "color": "lightblue" ,
+      "iconlink":"https://png.icons8.com/nolan/70/000000/siri-filled.png",
+      "linktype":"internal",
+      "link":"dashboard"
+    }
+      ]

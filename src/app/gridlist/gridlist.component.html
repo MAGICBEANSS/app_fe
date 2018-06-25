@@ -1,9 +1,14 @@
-<mat-grid-list cols="3" rowHeight="200px">
+<mat-grid-list cols="3" rowHeight="33%">
   <mat-grid-tile
       *ngFor="let tile of tiles"
       [colspan]="tile.cols"
+      (click)="routesto(tile)"
       [rowspan]="tile.rows"
-      [style.background]="tile.color">
-    {{tile.text}}
+      [style.background]="tile.color"
+      style="display:grid">
+      <div class="contentwrapper">
+     <div class="imgwrapper"> <img [src]="tile.iconlink"> </div>
+ <div>  <p style="text-align: left"   class="fontsize">{{tile.text}}</p></div> 
+</div>
   </mat-grid-tile>
 </mat-grid-list>

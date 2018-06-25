@@ -1,21 +1,8 @@
-<!-- 
-<app-root-root></app-root-root> -->
 
-<!-- <div class="wrapper">
-  <div class="sidebar-panel" id="sidebar" [style.background-color]="backgroundColor">
-
-    <div class="sidebar-background" [style.background-image]="'url(../assets/img/sidebar-' + id + '.jpg)'"></div>
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="main-panel" id="main-panel">
-    <router-outlet></router-outlet>
-  </div>
-</div>
- -->
  <div class="example-container  fullheight" [class.example-is-mobile]="mobileQuery.matches" >
     <mat-toolbar color="primary" class="example-toolbar" *ngIf="loggedIn" >
       <button mat-icon-button (click)="snav.toggle()"><mat-icon >menu</mat-icon></button>
-      <h1 class="example-app-name">Dashboard </h1>
+      <h1 class="example-app-name">{{header}} </h1>
     </mat-toolbar>
   
     <mat-sidenav-container class="example-sidenav-container " [ngClass]="boxheight"

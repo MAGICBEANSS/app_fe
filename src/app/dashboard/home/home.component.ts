@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , AfterViewInit } from '@angular/core';
 import { TaskResolver } from '../../services/taskresolver.service';
 declare const swal: any;
 import { Observable } from 'rxjs/Observable';
@@ -9,7 +9,7 @@ import 'rxjs/Rx';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit , AfterViewInit{
   isConnected$: Observable<boolean>;
   isonline: boolean;
   wrapperclass = 'col-lg-12 col-md-12 col-sm-12 col-xs-12';
@@ -22,11 +22,7 @@ export class HomeComponent implements OnInit {
       Observable.of(navigator.onLine),
       Observable.fromEvent(window, 'online').map(() => true),
       Observable.fromEvent(window, 'offline').map(() => false));
-    this.openAlert()
-  
-  }
-
-  ngOnInit() {
+    this.openAlert();
     this._trs.getPendingTask().subscribe(
       (data) => {
         console.log('pending tasks');
@@ -36,6 +32,15 @@ export class HomeComponent implements OnInit {
         this.countpendingtasks = this.pendingtask.length;
       }
     );
+  
+  }
+
+  ngOnInit() {
+    
+  }
+  ngAfterViewInit()
+  {
+    window.scrollTo(0, 0);
   }
 
   openAlert() {

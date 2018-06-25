@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routing } from './app.routes';
+// import { SocialLoginModule } from 'angularx-social-login';
+/* import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider  } from 'angularx-social-login';
+ */
 import 'hammerjs';
 import 'hammer-timejs';
 import { MatButtonModule, MatListModule, MatSidenav , MatSidenavContent , MatGridListModule , 
@@ -53,9 +56,36 @@ import { GridlistComponent } from './gridlist/gridlist.component';
 import { TablelistComponent } from './tablelist/tablelist.component';
 import { SinglecolumntableComponent } from './singlecolumntable/singlecolumntable.component';
 import { OnlineAvailableService } from './services/online-available.service';
+import { AppDataService } from './app-data.service';
+import { Angular2SocialLoginModule } from "angular2-social-login";
 // import { MaterialModule } from './material.module';
+/* let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("992431806044-7hrvnra3i4avaac7s1ac6irsogv2e21d.apps.googleusercontent.com")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("226677654608213")
+  }
+]); */
 
+let providers = {
+  "google": {
+    "clientId": "992431806044-7hrvnra3i4avaac7s1ac6irsogv2e21d.apps.googleusercontent.com"
+  },
+ /*  "linkedin": {
+    "clientId": "LINKEDIN_CLIENT_ID"
+  }, */
+  "facebook": {
+    "clientId": "226677654608213",
+    "apiVersion": "v3.0" //like v2.4
+  }
+};
 
+/* export function provideConfig() {
+  return config;
+} */
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,7 +117,7 @@ import { OnlineAvailableService } from './services/online-available.service';
     TablelistComponent,
     SinglecolumntableComponent
   ],
-  imports: [HttpClientModule, MatGridListModule,
+  imports: [HttpClientModule, MatGridListModule,Angular2SocialLoginModule,
     DataTablesModule,
     BrowserModule,
     FormsModule,
@@ -102,9 +132,12 @@ import { OnlineAvailableService } from './services/online-available.service';
     MatPaginatorModule , MatListModule , MatSidenavModule,
      ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
-    })
+    }), 
+   // SocialLoginModule
   ],
-  providers: [AuthService, AuthGuardService, LoginGuardService, SettingsService , TaskResolver , NewsletterService , LoginstatusService, OnlineAvailableService],
+  providers: [
+    AuthService, AuthGuardService, LoginGuardService, SettingsService , TaskResolver , NewsletterService , LoginstatusService, OnlineAvailableService, AppDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+Angular2SocialLoginModule.loadProvidersScripts(providers);

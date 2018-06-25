@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'table' , component : TablelistComponent ,  canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent,  canActivate: [AuthGuard]} ,
   {path: 'singletable', component: SinglecolumntableComponent,  canActivate: [AuthGuard]} ,
+ // {path: 'dashboard', component: HomeComponent,  canActivate: [AuthGuard]} ,
   {path: 'dashboard' ,  children: [
     {path: '', component: HomeComponent , canActivate: [AuthGuard]},
   //  {path: 'loader', component: LoaderComponent , canActivate: [AuthGuard]},

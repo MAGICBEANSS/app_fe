@@ -1,0 +1,27 @@
+.imgwrapper {
+    width: max-content;
+}
+.contentwrapper {
+    width:-webkit-fill-available;
+    padding-left: 41%;
+
+}
+.fontsize {
+    font-size: 18pt;
+        color: aliceblue;
+}
+@media (max-width: 400px) {
+    .imgwrapper {
+        width: max-content;
+    }
+    .contentwrapper {
+        width:-webkit-fill-available;
+        padding-left: 15%;
+    }
+    .fontsize {
+        font-size: 12pt;
+        color: aliceblue;
+        padding-left: 12%;
+    }
+    /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  }
