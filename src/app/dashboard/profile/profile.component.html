@@ -10,53 +10,74 @@
           <h4 class="card-title">Edit Profile -
             <small class="category">Complete your profile</small>
           </h4>
-          <form>
+          <form  [formGroup]="userForm" (submit)="saveUser()">
             <div class="row">
               <div class="col-md-6">
                 <mat-input-container color="accent">
-                  <input matInput type="text" placeholder="First Name" [(ngModel)]="firstName" value="Ci" name="firstName">
+                  <input matInput type="text" placeholder="First Name" formControlName="firstName"  name="firstName">
+                 
                 </mat-input-container>
+                <control-messages [control]="userForm.controls.firstName"></control-messages>
               </div>
               <div class="col-md-6">
                 <mat-input-container color="accent">
-                  <input matInput type="text" placeholder="Last Name" [(ngModel)]="lastName" value="Clia" name="lastName">
+                  <input matInput type="text" placeholder="Last Name" formControlName="lastName" name="lastName">
                 </mat-input-container>
+                <control-messages [control]="userForm.controls.lastName"></control-messages>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <mat-input-container color="accent">
-                  <input matInput type="text" placeholder="Address">
+                  <input matInput type="text" placeholder="Email" formControlName="email">
                 </mat-input-container>
+                <control-messages [control]="userForm.controls.email"></control-messages>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <mat-input-container color="accent">
+                  <input matInput type="text" placeholder="Address" formControlName="address">
+                </mat-input-container>
+                <control-messages [control]="userForm.controls.address"></control-messages>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
                 <mat-input-container color="accent">
-                  <input matInput type="text" placeholder="City">
+                  <input matInput type="text" placeholder="City" formControlName="city">
                 </mat-input-container>
+                <control-messages [control]="userForm.controls.city"></control-messages>
               </div>
               <div class="col-md-4">
                 <mat-input-container color="accent">
-                  <input matInput type="text" placeholder="Country">
+                  <input matInput type="text" placeholder="Country" formControlName="country">
                 </mat-input-container>
+                <control-messages [control]="userForm.controls.country"></control-messages>
               </div>
               <div class="col-md-4">
                 <mat-input-container color="accent">
-                  <input matInput type="text" placeholder="Postcode">
+                  <input matInput type="text" placeholder="Postcode" formControlName="zipcode">
                 </mat-input-container>
+                <control-messages [control]="userForm.controls.zipcode"></control-messages>
+              </div>
+              <div class="col-md-4">
+                <mat-input-container color="accent">
+                  <input matInput type="text" placeholder="Phone" formControlName="phone">
+                </mat-input-container>
+                <control-messages [control]="userForm.controls.phone"></control-messages>
               </div>
             </div>
-            <div class="row">
+           <!--  <div class="row">
               <div class="col-md-12">
                 <label class="textarea-label">About Me</label>
                 <mat-input-container color="accent">
                   <textarea matInput placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></textarea>
                 </mat-input-container>
               </div>
-            </div>
+            </div> -->
             <div class="row action-btn">
-              <button md-raised-button type="submit" class="btn btn-rose">UPDATE PROFILE</button>
+              <button md-raised-button type="submit" [disabled]="!userForm.valid" class="btn btn-rose">UPDATE PROFILE</button>
             </div>
           </form>
         </div>
@@ -65,12 +86,12 @@
     <div class="col-md-4">
       <div class="card right-profile">
         <div class="profile">
-          <img src="../../../assets/img/marc.jpg" alt="profile"/>
+          <img [src]="userdata.photoUrl" alt="profile"/>
         </div>
         <h6>CEO / CO-FOUNDER</h6>
-        <h4>{{ firstName }} {{ lastName }}</h4>
-        <p>Don't be scared of the truth because we need to restart the human foundation in truth And I love you like
-          Kanye loves Kanye I love Rick Owens’ bed design but the back is...</p>
+        <h4>{{ userdata.firstName }} {{ userdata.lastName }}</h4>
+ <!--        <p>Don't be scared of the truth because we need to restart the human foundation in truth And I love you like
+          Kanye loves Kanye I love Rick Owens’ bed design but the back is...</p> -->
         <button mat-raised-button class="btn btn-rose btn-round">CHANGE</button>
       </div>
     </div>

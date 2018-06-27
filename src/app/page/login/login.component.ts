@@ -6,7 +6,7 @@ import { TaskResolver } from '../../services/taskresolver.service';
 import { AppDataService  }  from '../../app-data.service';
 // import { AuthService } from 'angularx-social-login';
 import { AuthService } from "angular2-social-login";
- import { SocialUser } from 'angularx-social-login';
+ import { SocialUser } from '../../SocialUser';
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
  
 @Component({
@@ -50,9 +50,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
- //   this.isLoggedIn = this._loginstatusservice.isLoggedIn;
-
-
   }
   setuserData(resdata) {
     if(resdata['token'] !== '')
@@ -63,6 +60,38 @@ export class LoginComponent implements OnInit {
   }
   signInWithGoogle(): void {
   //  this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  let provider='google';
+  //   var self = this;
+  const socialdata = new SocialUser();
+     this.sub = this._auth.login(provider).subscribe(
+       (data) => {
+                   console.log(data);
+                   
+                   socialdata.authToken=data['token'];
+                   socialdata.firstName=data['name'].split(' ')[0];
+                   socialdata.lastName =data['name'].split(' ')[1];
+                   localStorage.setItem('myappfname',socialdata.firstName);
+                   socialdata.id=data['uid'];
+                   socialdata.provider=data['provider'];
+                   socialdata.email=data['email'];
+                   socialdata.photoUrl = data['image'];
+ 
+                   this._loginstatusservice.setLoggedIn(true,data['token']);
+ 
+             //      localStorage.setItem('loginkey',data['token']);
+               
+                   this._appData.setUserData(socialdata);
+                   
+                    this._ngz.run(() => {
+                      localStorage.setItem('myappfname',socialdata.firstName);
+                     this._router.navigate(['dashboard']);
+                   }); 
+                  
+                 
+  
+         
+                 }
+     )
   }
   signInWithFB(): void {
     let provider='facebook';
@@ -72,10 +101,12 @@ export class LoginComponent implements OnInit {
       (data) => {
                   console.log(data);
                   socialdata.authToken=data['token'];
-                  socialdata.firstName=data['name'];
+                  socialdata.firstName=data['name'].split(' ')[0];
+                  socialdata.lastName =data['name'].split(' ')[1];
                   socialdata.id=data['uid'];
                   socialdata.provider=data['provider'];
                   socialdata.email=data['email'];
+                  socialdata.photoUrl = data['image'];
 
                   this._loginstatusservice.setLoggedIn(true,data['token']);
 
@@ -84,6 +115,7 @@ export class LoginComponent implements OnInit {
                   this._appData.setUserData(socialdata);
                   
                    this._ngz.run(() => {
+                    localStorage.setItem('myappfname',socialdata.firstName);
                     this._router.navigate(['dashboard']);
                   }); 
                  

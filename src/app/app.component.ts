@@ -17,6 +17,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { TaskResolver } from './services/taskresolver.service';
 import {AppDataService} from './app-data.service';
 import { AuthService } from "angular2-social-login";
+import { SocialUser } from './SocialUser';
 
 
 
@@ -39,7 +40,8 @@ export class AppComponent implements OnInit {
   public backgroundColor: string;
   public boxheight;
   public isOnline = true;
-
+  public primary = 'red'; 
+public headercolor:string;
   readonly VAPID_PUBLIC_KEY = 'BKYEevgdyG0q71I4a45jYYrSnkLX_p-NSQuGLnmiDDhGz8jGTXyILmbBcpqR0USDnskuJN_kikqTgLxQGC94Mfs';
 
   constructor(
@@ -70,8 +72,10 @@ this._ols.isConnected$.subscribe((value) => {
         this.isOnline = true;
       }
 });
+const userdata : SocialUser = JSON.parse(localStorage.getItem('userdata_pwa_app'));
+// this.backgroundColor = userdata.headercolor;
 this.header = localStorage.getItem('myappfname');
-this._apd.userdata.subscribe((data) => {
+ this._apd.userdata.subscribe((data) => {
   console.log('userdata');
   console.log(data);
  this._lls.loggedIn.subscribe((status ) => {
@@ -79,7 +83,7 @@ this._apd.userdata.subscribe((data) => {
    {
      this._apd.userdata.subscribe((adata) => {
        console.log(adata);
-   //    this.header = adata.firstName;
+       this.header = adata.firstName;
        this.header = localStorage.getItem('myappfname');
  //      this._apd.user = adata;
 
@@ -88,7 +92,7 @@ this._apd.userdata.subscribe((data) => {
  });
   
   
-    });
+    }); 
   
 
 this._lls.loggedIn.subscribe((res) => {
@@ -102,7 +106,7 @@ this._lls.loggedIn.subscribe((res) => {
     }
         });
         this.id = settingService.getSidebarImageIndex() + 1;
-        this.backgroundColor = settingService.getSidebarColor();
+   //     this.backgroundColor = settingService.getSidebarColor();
         this.mobileQuery = media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = () => changeDetectorRef.detectChanges();
         this.mobileQuery.addListener(this._mobileQueryListener);
@@ -231,6 +235,7 @@ if(type == 'internal')
   logout() {
 
     localStorage.removeItem('myappfname');
+    localStorage.removeItem('userdata_pwa_app');
     this._ats.logout().subscribe(
       (data)=>{
         console.log(data);

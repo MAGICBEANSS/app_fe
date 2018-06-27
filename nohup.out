@@ -185,3 +185,25 @@ wxD-Bus: CPowerManagementInhibitordbus[2629]: arguments to dbus_message_iter_app
 This is normally a bug in some application using the D-Bus library.
 
   D-Bus not built with -rdynamic so unable to print a backtrace
+filezilla: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+Reading locale option from /home/mb/.config/filezilla/filezilla.xml
+wxD-Bus: Signal from /org/freedesktop/DBus, member NameAcquired
+wxD-Bus: Reply with serial 2
+wxD-Bus: Reply to RegisterClient, our object path is /org/gnome/SessionManager/Client33
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 3
+wxD-Bus: Reply: Error: The name org.freedesktop.PowerManagement was not provided by any .service files
+wxD-Bus: Falling back to org.gnome.SessionManager
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 4
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 674843627
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 5
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: CPowerManagementInhibitor: Requesting busy
+wxD-Bus: Reply with serial 6
+wxD-Bus: CPowerManagementInhibitor: Request successful, cookie is 1413598595
+wxD-Bus: CPowerManagementInhibitor: Requesting idle
+wxD-Bus: Reply with serial 7
+wxD-Bus: CPowerManagementInhibitor: Request successful
+wxD-Bus: Reply with serial 8

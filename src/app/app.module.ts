@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -58,6 +58,8 @@ import { SinglecolumntableComponent } from './singlecolumntable/singlecolumntabl
 import { OnlineAvailableService } from './services/online-available.service';
 import { AppDataService } from './app-data.service';
 import { Angular2SocialLoginModule } from "angular2-social-login";
+import { ControlMessagesComponent } from './dashboard/profile/control-messages/control-messages.component';
+
 // import { MaterialModule } from './material.module';
 /* let config = new AuthServiceConfig([
   {
@@ -72,7 +74,7 @@ import { Angular2SocialLoginModule } from "angular2-social-login";
 
 let providers = {
   "google": {
-    "clientId": "992431806044-7hrvnra3i4avaac7s1ac6irsogv2e21d.apps.googleusercontent.com"
+    "clientId": "992431806044-iqgs31hp19hff97ncp82qldtag9qci45.apps.googleusercontent.com"
   },
  /*  "linkedin": {
     "clientId": "LINKEDIN_CLIENT_ID"
@@ -115,10 +117,12 @@ let providers = {
     PageNotFoundComponent,
     GridlistComponent,
     TablelistComponent,
-    SinglecolumntableComponent
+    SinglecolumntableComponent,
+    ControlMessagesComponent
   ],
   imports: [HttpClientModule, MatGridListModule,Angular2SocialLoginModule,
     DataTablesModule,
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     HttpModule,
