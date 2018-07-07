@@ -30,6 +30,7 @@ return this.http.get('../../assets/json/pending_task.json');
 
     getGridList(): Observable<any> {
         return this.http.get('assets/json/gridlist.json');
+    //  return this.http.get('https://antrorse.org/mydata/getconfigdata.php?configname=SITE_NAME&sitename=WWW.SITE.COM');
     }
     getTableList(): Observable<any> {
       // return this.http.get('../../assets/json/tablelist.json');
@@ -39,7 +40,8 @@ return this.http.get('../../assets/json/pending_task.json');
 
     getsingleTableList(): Observable<any> {
         // return this.http.get('../../assets/json/tablelist.json');
-        return this.http.get('assets/json/singlecol.json');
+      //  return this.http.get('assets/json/singlecol.json');
+      return this.http.get('https://antrorse.org/mydata/getconfigdata.php?configname=SITE_NAME&sitename=WWW.SITE.COM');
       //  return this.http.get('https://jsonplaceholder.typicode.com/users');
       }
   

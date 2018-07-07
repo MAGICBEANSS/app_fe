@@ -9,17 +9,21 @@
     [style.background-color]="backgroundColor"
                            [style.marginTop.px]="mobileQuery.matches ? 5 : 0">
           <mat-sidenav class="sidenav-width" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-              [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+          fixedTopGap="56">
+<!--               <mat-sidenav class="sidenav-width" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+              [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"> -->
                 <mat-nav-list>
 <!--           <a mat-list-item routerLink="."  (click)="snav.toggle();gotoDasboard('dashbaord')">Dashbaord</a>
           <a mat-list-item routerLink="."  (click)="snav.toggle();gotoDasboard('grid')">Grid</a>
           <a mat-list-item routerLink="."  (click)="snav.toggle();gotoDasboard('table')">Table</a> -->
-          <a mat-list-item routerLink="." (swipeleft)="snav.toggle();" (click)="snav.toggle();routesto(menuitem,'internal')"   *ngFor="let menuitem of localmenu">{{menuitem.name}} </a>
-          <a mat-list-item routerLink="." (swipeleft)="snav.toggle();" (click)="snav.toggle();routeto()">Index 1</a>
-          <a mat-list-item routerLink="." (swipeleft)="snav.toggle();" (click)="snav.toggle();routesto(menuitem,'external')"   *ngFor="let menuitem of menuList"><mat-icon> {{menuitem.icon}} </mat-icon>{{menuitem.name}} </a>
+          <a mat-list-item routerLink="." (click)="snav.toggle();routesto(menuitem,'internal')"   *ngFor="let menuitem of localmenu">{{menuitem.name}} </a>
+          <a mat-list-item routerLink="." (click)="snav.toggle();routeto()">Index 1</a>
+          <a mat-list-item routerLink="."  (click)="snav.toggle();routesto(menuitem,'external')"   *ngFor="let menuitem of menuList"><mat-icon> {{menuitem.icon}} </mat-icon>{{menuitem.name}} </a>
 <!--           <a mat-list-item routerLink="." (click)="snav.toggle();routesdiff()">Calendar</a> -->
-          <a mat-list-item routerLink="." *ngIf="isOnline" (swipeleft)="snav.toggle();" (click)="snav.toggle();logout()" >Logout</a>
-        
+       <!--    <a mat-list-item routerLink="." *ngIf="isOnline" (swipeleft)="snav.toggle();" (click)="snav.toggle();logout()" >Logout</a>
+        -->
+          <a mat-list-item routerLink="." *ngIf="isOnline"  (click)="snav.toggle();logout()" >Logout</a>
+       
         </mat-nav-list>
       </mat-sidenav>
   

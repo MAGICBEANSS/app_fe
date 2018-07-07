@@ -18,6 +18,7 @@ import { TaskResolver } from './services/taskresolver.service';
 import {AppDataService} from './app-data.service';
 import { AuthService } from "angular2-social-login";
 import { SocialUser } from './SocialUser';
+import { v4 as uuid } from 'uuid';
 
 
 
@@ -58,7 +59,7 @@ public headercolor:string;
     private media: MediaMatcher,
     public settingService: SettingsService ,
   ) {
-
+    console.log('new uid: ', uuid());
 console.log('kdfjdsklf');
 console.log(this._apd.user);
 // root.component.copied

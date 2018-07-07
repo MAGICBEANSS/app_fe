@@ -22,12 +22,13 @@ export class NewsletterService {
 body.append('user_token', user_token);
 console.log(body);
 console.log('sending user_token => ' + user_token + ' to https://antrorse.org/push/addtoken.php');
-   return this.http.post(' http://localhost:9000/api/notifications', sub);
+ //  return this.http.post(' http://localhost:9000/api/notifications', sub);
   // return this.http.post('https://antrorse.org/push/addtoken.php', body );
+  return this.http.post('https://ec2-54-218-242-127.us-west-2.compute.amazonaws.com/api/lessons', sub);
     }
 
     send() {
-        return this.http.post('http://localhost:9000/api/newsletter', null);
+        return this.http.post('https://ec2-54-218-242-127.us-west-2.compute.amazonaws.com/api/newsletter', null);
     }
 
 }
